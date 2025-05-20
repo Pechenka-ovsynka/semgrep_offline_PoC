@@ -88,7 +88,6 @@ class Handler(http.server.BaseHTTPRequestHandler):
         try:
             with open(filepath, "rb") as f:
                 content = f.read()
-            
             content_length = len(content)
 
             # Проверяем, что размер файла совпадает с размером прочитанного контента
@@ -115,12 +114,6 @@ class Handler(http.server.BaseHTTPRequestHandler):
         except Exception as e:
             print(f"Error serving file {filename}: {e}")
             self._send_response(json.dumps({"error": "Internal server error"}), 500)
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
